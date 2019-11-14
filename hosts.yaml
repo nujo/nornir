@@ -1,3 +1,7 @@
 --- 
-rtr1:
-  hostname: 192.168.10.11
+DIS-1:
+  hostname: 192.168.0.11
+ACC-1:
+  hostname: 192.168.0.13
+DIS-2:
+  hostname: 192.168.0.14

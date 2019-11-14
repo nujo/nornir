@@ -14,9 +14,9 @@ print(nr.inventory.hosts)
 
 
 
-result = nr.run(napalm_get, getters=['get_interfaces_counters'])
+result = nr.run(napalm_get, getters=['get_interfaces'])
 
-print(result['rtr1'][0].result['get_interfaces_counters']['Ethernet0/0']['rx_octets'])
+print_result(result)
 
 for device in result.items():
     for interface in device[1].result['get_interfaces_counters'].items():

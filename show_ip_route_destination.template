@@ -1,0 +1,12 @@
+Value DESTINATION (\S+)
+Value NEXTHOP_IP (\S+)
+Value NEXTHOP_IF (\S+)
+Value NOTINTABLE (Network not in table)
+Value DIRECTLY (directly connected)
+
+Start
+  ^Routing entry for\s${DESTINATION}
+  ^.+from\s${NEXTHOP_IP},.+via\s${NEXTHOP_IF} -> Record
+  ^.+${DIRECTLY},.+via\s${NEXTHOP_IF} -> Record
+  ^.+\*\s${NEXTHOP_IP} -> Record
+  ^%\s${NOTINTABLE} -> Record
